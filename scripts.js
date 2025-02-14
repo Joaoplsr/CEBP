@@ -1,3 +1,5 @@
+// Sidebar
+
 const sidebar = document.getElementById('sidebar');
 const openBtn = document.getElementById('open-btn');
 const closeBtn = document.getElementById('close-btn');
@@ -18,3 +20,17 @@ overlay.onclick = function() {
     sidebar.style.left = '-250px'; 
     document.body.classList.remove('overlay-active');
 }
+
+// Dark Mode
+
+const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+  };
+  window.onload = () => {
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    }
+  };
