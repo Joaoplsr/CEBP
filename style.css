@@ -53,7 +53,7 @@ overflow: visible;
 #logo-svg {
     width: 50px;
     height: 50px;
-    margin-bottom: -10px;
+    margin: -10px 0;
 }
 
 .sidebar {
@@ -204,10 +204,11 @@ footer {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
+    flex-wrap: wrap;
     align-items: center;
     background-color: var(--accent-clr);
-    height: 50px;
-    padding: 40px 25px;
+    height: auto;
+    padding: 20px 25px;
     transition: .3s;
     color: #ffffff;
 }
@@ -224,6 +225,8 @@ footer {
     align-items: center;
     width: 100%;
     max-width: 150px;
+    gap: 10px;
+    margin: 0 10px;
 }
 
  @media screen and (max-width: 620px){
@@ -232,6 +235,19 @@ footer {
         height: auto;
         flex-direction: column;
     }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .enviar-mail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .redessociais-footer{
+        margin-left: -10px;
+    }
 }
 
 footer p {
@@ -239,9 +255,23 @@ footer p {
 }
 
 .social-logo{
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     fill: #F2F8FF;
+    display: flex;
+    position: relative;
+}
+
+.social-logo {
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    padding: 3px;
+}
+
+.enviar-mail {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #mail {
@@ -267,4 +297,30 @@ footer p {
 
 #mail:hover #seta {
     transform: translateY(-2px) translateX(2px) rotate(-135deg);
+}
+
+.container-copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.copyright {
+    font-size: .8em;
+    display: block;
+    margin-left: -25px;
+    text-wrap: balance;
+    width: 100%;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
 }

@@ -34,3 +34,7 @@ const toggleDarkMode = () => {
       document.body.classList.add('dark-mode');
     }
   };
+
+// Ano
+
+document.getElementById("year").textContent = new Date().getFullYear();
