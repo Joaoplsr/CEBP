@@ -26,6 +26,7 @@ body {
 display: flex;
 justify-content: center;
 align-items: center;
+flex-direction: column;
 }
 
 .container {
@@ -42,6 +43,7 @@ justify-content: space-between;
 position: sticky;
 top: 0;
 transition: .3s;
+overflow: visible;
 }
 
 .dark-mode header {	
@@ -51,6 +53,7 @@ transition: .3s;
 #logo-svg {
     width: 50px;
     height: 50px;
+    margin-bottom: -10px;
 }
 
 .sidebar {
@@ -62,7 +65,7 @@ transition: .3s;
     transform: translate(-50%, -50%);
     background-color: var(--bg-clr);
     color: var(--text-clr);
-    transition: left .8s ease-in-out; 
+    transition: left .8s ease-in-out, background-color .3s ease-in-out; 
     padding-top: 20px;
     z-index: 10;
 }
@@ -137,6 +140,15 @@ transition: .3s;
     transition: 0.3s ease-in-out;
 }
 
+#menu-text {
+    transition: .3s;
+}
+
+@media  screen and (max-width: 620px){
+    #menu-text {
+        display: none;
+    }
+}
 
 .close-btn {
     font-size: 24px;
@@ -194,27 +206,42 @@ footer {
     gap: 20px;
     align-items: center;
     background-color: var(--accent-clr);
-    height: 150px;
+    height: 50px;
     padding: 40px 25px;
     transition: .3s;
     color: #ffffff;
 }
 
-@media screen and (max-width: 620px){
+#logo-footer {
+    width: 50px;
+    height: 50px;
+    margin: -20px 0;
+}
+
+.redessociais-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 150px;
+}
+
+ @media screen and (max-width: 620px){
     footer {
         padding: 40px 15px;
+        height: auto;
         flex-direction: column;
     }
-
-
 }
 
 footer p {
     padding-left: 15px;
 }
 
-#body {
-    background-color: #222725;
+.social-logo{
+    width: 28px;
+    height: 28px;
+    fill: #F2F8FF;
 }
 
 #mail {
@@ -223,6 +250,10 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#mail:hover {
+    text-decoration: underline;
 }
 
 #seta {
