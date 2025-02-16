@@ -37,4 +37,16 @@ const toggleDarkMode = () => {
 
 // Ano
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// document.getElementById("year").textContent = new Date().getFullYear();
+
+// Header
+
+window.addEventListener("scroll", function() {
+  var header = document.getElementById("header");
+  
+  if (window.scrollY > 50) {
+      header.classList.add("scrolled"); 
+  } else {
+      header.classList.remove("scrolled");
+  }
+});

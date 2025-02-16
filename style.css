@@ -43,11 +43,13 @@ justify-content: space-between;
 position: sticky;
 top: 0;
 transition: .3s;
-overflow: visible;
+border-bottom: 1px solid #444;
 }
 
-.dark-mode header {	
+.scrolled {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    transition: .3s;
 }
 
 #logo-svg {
@@ -201,6 +203,7 @@ h2 {
 }
 
 footer {
+    border-top: 1px solid #444  ;
     display: flex;
     justify-content: flex-start;
     gap: 20px;
@@ -213,18 +216,45 @@ footer {
     color: #ffffff;
 }
 
+.footerdiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+#link-footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+#link-footer h1{
+    text-decoration: none;
+    color: #ffffff;
+    text-wrap: balance;
+    font-size: 2em;
+}
+
 #logo-footer {
-    width: 50px;
-    height: 50px;
-    margin: -20px 0;
+    width: 100px;
+    height: 100px;
+    margin: -5px 20px -10px 0;
+}
+
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
 .redessociais-footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    max-width: 150px;
     gap: 10px;
     margin: 0 10px;
 }
@@ -236,8 +266,19 @@ footer {
         flex-direction: column;
     }
 
-    .copyright {
+    .footerdiv{
+        justify-content: center;
+    }
+
+    #link-footer h1 {
+        display: none;
+    }
+
+    .flex-end {
+        justify-content: flex-start;
+        flex-direction: column;
         text-align: center;
+        gap: 10px;
     }
 
     .enviar-mail {
@@ -245,9 +286,6 @@ footer {
         flex-direction: column;
     }
 
-    .redessociais-footer{
-        margin-left: -10px;
-    }
 }
 
 footer p {
@@ -255,23 +293,18 @@ footer p {
 }
 
 .social-logo{
-    width: 35px;
+    width: 30px;
     height: 35px;
     fill: #F2F8FF;
     display: flex;
-    position: relative;
-}
-
-.social-logo {
-    border-radius: 50%;
-    border: 1px solid #ffffff;
-    padding: 3px;
+    justify-content: center;
 }
 
 .enviar-mail {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
 }
 
 #mail {
