@@ -6,6 +6,7 @@
    --accent-clr: #222725;
    --bg-clr: #F2F8FF;
    --text-clr: #000000;
+
 }
 
 .dark-mode {
@@ -52,10 +53,14 @@ border-bottom: 1px solid #444;
     transition: .3s;
 }
 
+.scrolled #menu-text {
+    opacity: 0;
+}
+
 #logo-svg {
     width: 50px;
     height: 50px;
-    margin: -10px 0;
+    margin: -10px 0 -10px -30px;
 }
 
 .sidebar {
@@ -96,6 +101,26 @@ border-bottom: 1px solid #444;
 
 .sidebar li a:hover {
     background-color: #575757;
+}
+
+#toggle-dark-mode {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lua{
+    fill: #222725;
+    width: 100%;
+    height: 100%;
+}
+
+#sol{
+    fill: #222725;
+    width: 100%;
+    height: 100%;
 }
 
 .main-content {
