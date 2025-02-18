@@ -111,18 +111,6 @@ transition: .3s;
     justify-content: center;
 }
 
-#lua{
-    fill: #222725;
-    width: 100%;
-    height: 100%;
-}
-
-#sol{
-    fill: #222725;
-    width: 100%;
-    height: 100%;
-}
-
 .main-content {
     margin-left: 20px;
     padding: 20px;
@@ -308,12 +296,26 @@ footer {
         flex-wrap: wrap;
     }
 
+    .break-footer {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+
 }
 
 .footer-main {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.break-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .footer-grid {
