@@ -43,7 +43,7 @@ justify-content: space-between;
 position: sticky;
 top: 0;
 transition: .3s;
-
+z-index: 5;
 }
 
 .scrolled {
@@ -188,14 +188,19 @@ transition: .3s;
 }
 
 main {
-    padding: 0 35px;
     background-color: var(--bg-clr);
     color: var(--text-clr);
     transition: .3s;
 }
 
-@media screen and (max-width: 620px){
-    main{
+main article {
+    padding: 0 35px;
+    transition: .3s;
+}
+
+@media screen and (max-width: 620px) {
+    
+    main article {
         padding: 0 15px;
     }
 }

@@ -50,3 +50,45 @@ window.addEventListener("scroll", function() {
       header.classList.remove("scrolled");
   }
 });
+
+// Carrosel
+
+let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const carousel = document.getElementById("carousel");
+        let intervalTime = 5000; // Tempo padrão por slide
+        
+        function updateSlide() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide();
+            resetTimer();
+        }
+        
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide();
+            resetTimer();
+        }
+        
+        function autoSlide() {
+            nextSlide();
+        }
+        
+        function resetTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(autoSlide, intervalTime);
+        }
+        
+        let slideInterval = setInterval(autoSlide, intervalTime);
+        
+        // Ajuste do tempo para o primeiro slide (vídeo)
+        window.onload = function() {
+            setTimeout(() => {
+                nextSlide();
+                slideInterval = setInterval(autoSlide, intervalTime);
+            }, 5000); // Tempo do vídeo
+        };
