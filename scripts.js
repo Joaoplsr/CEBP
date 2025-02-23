@@ -51,44 +51,55 @@ window.addEventListener("scroll", function() {
   }
 });
 
-// Carrosel
+// Carrossel
 
+const slides = document.querySelector(".slides");
+const slideElements = document.querySelectorAll(".slide");
+const indicatorsContainer = document.querySelector(".indicators");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
 let currentIndex = 0;
-        const slides = document.querySelectorAll(".slide");
-        const carousel = document.getElementById("carousel");
-        let intervalTime = 5000; // Tempo padrão por slide
-        
-        function updateSlide() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlide();
-            resetTimer();
-        }
-        
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateSlide();
-            resetTimer();
-        }
-        
-        function autoSlide() {
-            nextSlide();
-        }
-        
-        function resetTimer() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(autoSlide, intervalTime);
-        }
-        
-        let slideInterval = setInterval(autoSlide, intervalTime);
-        
-        // Ajuste do tempo para o primeiro slide (vídeo)
-        window.onload = function() {
-            setTimeout(() => {
-                nextSlide();
-                slideInterval = setInterval(autoSlide, intervalTime);
-            }, 5000); // Tempo do vídeo
-        };
+let autoPlayInterval;
+let startX;
+
+// Criar indicadores
+slideElements.forEach((_, index) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToSlide(index));
+    indicatorsContainer.appendChild(dot);
+});
+
+const updateIndicators = () => {
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+    });
+};
+
+const goToSlide = (index) => {
+    currentIndex = index;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    updateIndicators();
+    resetAutoPlay();
+    if (index === 0) document.querySelector("video").play();
+};
+
+const nextSlide = () => goToSlide((currentIndex + 1) % slideElements.length);
+const prevSlide = () => goToSlide((currentIndex - 1 + slideElements.length) % slideElements.length);
+
+nextButton.addEventListener("click", nextSlide);
+prevButton.addEventListener("click", prevSlide);
+
+// AutoPlay
+const startAutoPlay = () => autoPlayInterval = setInterval(nextSlide, 5000);
+const resetAutoPlay = () => { clearInterval(autoPlayInterval); startAutoPlay(); };
+startAutoPlay();
+
+// Arraste para mover
+slides.addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
+slides.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextSlide();
+    if (endX - startX > 50) prevSlide();
+});
