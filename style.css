@@ -145,15 +145,20 @@ header {
     height: 100%;
 }
 
-@media screen and (max-width: 768px) {
+video::-webkit-media-controls {
+    display: none !important;
+  }
+
+@media screen and (max-width: 1000px) {
     .hero-content {
         width: 100%;
-        height: 425px;
+        height: 600px;
         overflow: hidden;
         position: relative;
     }
 
     #hero-video {
+        margin: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -161,8 +166,21 @@ header {
         top: 0;
         left: 0;
     }
+}
 
+@media screen and (max-width: 800px) {
+    .hero-content {
+        height: 550px;
+    }
+}
 
+@media screen and (max-width: 500px) {
+    .hero-content {
+        width: 100%;
+        height: 550px;
+        overflow: hidden;
+        position: relative;
+    }
 }
 
 .open-btn {
