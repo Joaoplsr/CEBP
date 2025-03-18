@@ -64,3 +64,11 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 elements.forEach(element => observer.observe(element));
+
+// Autoplay
+
+document.addEventListener("DOMContentLoaded", function () {
+    let video = document.querySelector("video");
+    video.muted = true;
+    video.play().catch(error => console.log("Autoplay bloqueado:", error));
+  });
