@@ -56,7 +56,7 @@ header {
     position: sticky;
     top: 0;
     transition: .3s;
-    z-index: 5;
+    z-index: 25;
 }
 
 .scrolled {
@@ -87,7 +87,7 @@ header {
     color: var(--text-clr);
     transition: left .8s ease-in-out, background-color .3s ease-in-out;
     padding-top: 20px;
-    z-index: 10;
+    z-index: 50;
 }
 
 .sidebar-header {
@@ -246,7 +246,7 @@ video::-webkit-media-controls {
     visibility: hidden;
     background: rgba(0, 0, 0, .5);
     transition: opacity .8s ease-in-out, visibility .8s ease-in-out;
-    z-index: 6;
+    z-index: 30;
 }
 
 .overlay-active #overlay {
@@ -265,6 +265,40 @@ main article {
     transition: .3s;
 }
 
+#habacuque {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.box {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    z-index: 30;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.box-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#ac {
+    display: block;
+    text-align: center;
+}
+
 @media screen and (max-width: 620px) {
 
     main article {
@@ -274,12 +308,6 @@ main article {
 
 section {
     padding: 15px 0;
-}
-
-#habacuque {
-    font: normal bold 2em Arial, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
-    text-wrap: balance;
 }
 
 main h2 {

@@ -1,13 +1,20 @@
-// Sidebar
+// Sidebar e Habacuque
 
 const sidebar = document.getElementById('sidebar');
 const openBtn = document.getElementById('open-btn');
 const closeBtn = document.getElementById('close-btn');
 const overlay = document.getElementById('overlay')
+const habacuque = document.getElementById('habacuque');
+const box = document.getElementById('box');
 
 openBtn.onclick = function () {
     sidebar.style.left = '125px';
     document.body.classList.add('overlay-active');
+}
+
+habacuque.onclick = function () {
+    document.body.classList.add('overlay-active');
+    box.classList.add('box-active');
 }
 
 
@@ -19,6 +26,7 @@ closeBtn.onclick = function () {
 overlay.onclick = function () {
     sidebar.style.left = '-250px';
     document.body.classList.remove('overlay-active');
+    box.classList.remove('box-active');
 }
 
 // Dark Mode
@@ -71,4 +79,4 @@ document.addEventListener("DOMContentLoaded", function () {
     let video = document.querySelector("video");
     video.muted = true;
     video.play().catch(error => console.log("Autoplay bloqueado:", error));
-  });
+});
