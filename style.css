@@ -119,9 +119,6 @@ header {
 #toggle-dark-mode {
     all: unset;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero {
@@ -265,7 +262,7 @@ main article {
     transition: .3s;
 }
 
-#habacuque {
+#habacuque, #isaias{
     cursor: pointer;
     text-decoration: underline;
     font-weight: bold;
@@ -286,8 +283,7 @@ main article {
     max-width: 600px;
     text-align: center;
     z-index: 30;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-}
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;}
 
 .box-active {
     visibility: visible;
