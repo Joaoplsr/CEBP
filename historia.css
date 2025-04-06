@@ -1,0 +1,52 @@
+:root {
+    --accent-clr: #222725;
+    --bg-clr: #F2F8FF;
+    --text-clr: #222725;
+}
+
+.foto-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 20px 0;
+    padding: 15px;
+}
+
+.foto-section h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-clr);
+    font-size: 4em;
+    text-align: left;
+}
+
+/* .foto-section:nth-child(even) p{
+    color: var(--bg-clr);
+    background-color: var(--accent-clr);
+} */
+
+.foto-section img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 15px;
+    margin-left: 35px;
+}
+
+.foto-section p {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-clr);
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+@media screen and (max-width: 800px) {
+    .foto-section {
+        flex-direction: column;
+    }
+
+    .foto-section img {
+        margin: 35px 0 0 0 ;
+        max-width: 450px;
+        height: auto;
+    }
+}
