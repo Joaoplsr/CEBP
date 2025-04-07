@@ -131,27 +131,46 @@
                 </section>
 
                 <section class="foto-section">
-                    <p class="fade">Após várias mudanças e desafios, a congregação se tornou a
-                        Comunidade Evangélica Benção do Pai, um espaço onde a palavra de Deus é vivida e praticada.
-                        Firmada na palavra de Deus tem como líderes espiritual o Pastor Luís Garcia e a Pastora Silvana
-                        Garcia a comunidade evangélica benção do pai tem se dedicado a servir a Deus e ao próximo com o
-                        amor de Cristo.</p>
+                    <div class="right">
+                        <h1>Crescimento</h1>
+                        <p class="fade">Após várias mudanças e desafios, a congregação se tornou a Comunidade Evangélica
+                            Benção do Pai, um espaço onde a palavra de Deus é vivida e praticada. Firmada na palavra de
+                            Deus tem como líderes espiritual o Pastor Luís Garcia e a Pastora Silvana Garcia a
+                            comunidade evangélica benção do pai tem se dedicado a servir a Deus e ao próximo com o amor
+                            de Cristo.</p>
+                        <br>
+                        <p class="fade">Mesmo diante das dificuldades, como a pandemia, a fé e a união da igreja têm
+                            sido a força motriz para continuar avançando. A história da Comunidade é repleta de
+                            testemunhos de cura, restauração e milagres, e a expectativa é que Deus ainda tem muito mais
+                            a realizar em meio a nós.</p>
+                    </div>
+                    <section class="carrossel-container">
+                        <div class="carrossel-wrapper" id="carrosselWrapper">
+                            <div class="carrossel-slide">
+                                <img src="assets/pastorepastora.jpg" alt="Imagem 1" />
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/rita.jpg" alt="Imagem 2" />
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/lucas.jpg" alt="Imagem 3" />
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/pastot.jpg" alt="Imagem 4" />
+                            </div>
+                        </div>
+                    </section>
                 </section>
 
-                <section class="foto-section">
-                    <p class="fade">Mesmo diante das dificuldades, como a pandemia, a fé e a união da igreja têm sido a
-                        força motriz para continuar avançando. A história da Comunidade é repleta de testemunhos de
-                        cura, restauração e milagres, e a expectativa é que Deus ainda tem muito mais a realizar em meio
-                        a nós.</p>
-                </section>
             </article>
+
+            <div class="box" id="box">
+                <p id="passagem">
+                    <br>
+                </p>
+            </div>
         </main>
-        <div class="box" id="box">
-            <p id="passagem">
-                <br>
-                <span id="ac">ARC - Almeida Revista e Corrigida</span>
-            </p>
-        </div>
+
         <footer>
 
             <div class="footerdiv">
@@ -380,6 +399,18 @@
             document.body.classList.add('overlay-active');
             box.classList.add('box-active');
         }
+
+        const wrapper = document.getElementById('carrosselWrapper');
+        const slides = wrapper.querySelectorAll('.carrossel-slide');
+        let currentIndex = 0;
+
+        function mostrarProximoSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(mostrarProximoSlide, 4000);
+
     </script>
 </body>
 

@@ -281,6 +281,7 @@ main article {
     border-radius: 10px;
     width: 100%;
     max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     z-index: 30;
     transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;}
@@ -318,7 +319,7 @@ main p {
     font-family: 'Poppins', sans-serif;
     color: var(--text-clr);
     font-size: 1.1rem;
-    text-align: justify;
+    text-align: left;
     line-height: 1.5em;
 }
 
