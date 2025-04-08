@@ -27,7 +27,7 @@ overlay.onclick = function () {
 const toggleDarkMode = () => {
     document.body.classList.toggle('dark-mode');
     const isDarkMode = document.body.classList.contains('dark-mode');
-    
+
     // Atualiza o texto do botão
     darkModeToggle.innerHTML = isDarkMode ? 'Modo Claro' : 'Modo Escuro';
 
@@ -79,7 +79,22 @@ elements.forEach(element => observer.observe(element));
 // Autoplay
 
 document.addEventListener("DOMContentLoaded", function () {
-    let video = document.querySelector("video");
+    const video = document.getElementById("hero-video");
+
+    // Força mute antes de qualquer tentativa de play
     video.muted = true;
-    video.play().catch(error => console.log("Autoplay bloqueado:", error));
+
+    // Algumas plataformas (especialmente iOS) precisam de 'load'
+    video.load();
+
+    // Tenta dar play com fallback
+    const tryAutoplay = () => {
+        video.play().then(() => {
+            console.log("Autoplay funcionando ✅");
+        }).catch(error => {
+            console.warn("Autoplay bloqueado ❌", error);
+        });
+    };
+
+    tryAutoplay();
 });
